@@ -2,7 +2,9 @@ import java.util.Scanner;
 public class ArrayRataNilai24 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int[] nilaiMhs = new int[10];
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        int jumlahMhs = input.nextInt();
+        int[] nilaiMhs = new int[jumlahMhs];
         int total = 0;
         int jumlahLulus = 0;
         double rata2;
@@ -15,9 +17,6 @@ public class ArrayRataNilai24 {
             }
         }
         rata2 = (double) total / nilaiMhs.length;
-        System.out.println("Total nilai: " + total);
-        System.out.println("Rata-rata: " + rata2);
-        System.out.println("Jumlah mahasiswa yang lulus: " + jumlahLulus);
         int tertinggi = nilaiMhs[0];
         int terendah = nilaiMhs[0];
         for (int i = 1; i < nilaiMhs.length; i++) {
@@ -28,9 +27,14 @@ public class ArrayRataNilai24 {
                 terendah = nilaiMhs[i];
             }
         }
+        System.out.println("\n=== HASIL PERHITUNGAN ===");
+        System.out.println("Jumlah mahasiswa: " + jumlahMhs);
+        System.out.println("Total nilai: " + total);
+        System.out.println("Rata-rata: " + rata2);
         System.out.println("Nilai tertinggi: " + tertinggi);
         System.out.println("Nilai terendah: " + terendah);
-        String predikat;  
+        System.out.println("Jumlah mahasiswa yang lulus: " + jumlahLulus);
+        String predikat;
         if (rata2 >= 85) {
             predikat = "SANGAT BAIK";
         } else if (rata2 >= 70) {
